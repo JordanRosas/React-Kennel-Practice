@@ -27,16 +27,25 @@ class Kennel extends Component {
     ]
 
     animalsFromAPI = [
-        { id: 1, name: "Tiger"},
-        { id: 2, name: "Elephant"},
-        { id: 3, name: "Camel"},
-        { id: 4, name: "Narwal"},
+        { id: 1, name: "Tiger", animalId:1},
+        { id: 2, name: "Elephant", animalId:2},
+        { id: 3, name: "Camel", animalId:3},
+        { id: 4, name: "Narwal", animalId:4}
+    ]
+    ownersFromAPI = [
+        { id: 1, name: "Ryan Tanay", animalId: 1},
+        { id: 2, name: "Emma Beaton", animalId:4 },
+        { id: 3, name: "Dani Adkins", animalId:2 },
+        { id: 4, name: "Adam Oswalt", animalId:3 },
+        { id: 5, name: "Fletcher Bangs", animalId:2 },
+        { id: 6, name: "Angela Lee", animalId:1}
     ]
 
     state = {
         employees: this.employeesFromAPI,
         locations: this.locationsFromAPI,
-        animals: this.animalsFromAPI
+        animals: this.animalsFromAPI,
+        owners: this.ownersFromAPI
     }
 
     render() {
@@ -45,7 +54,7 @@ class Kennel extends Component {
     {/* passing the state to the children */}
                 <LocationList locations={this.state.locations} />
                 <EmployeeList employees={this.state.employees} />
-                <AnimalList animals={this.state.animals} />
+                <AnimalList animals={this.state.animals} owners={this.state.owners}/>
             </article>
         )
     }
